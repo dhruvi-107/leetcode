@@ -2,15 +2,15 @@ class Solution {
 public:
     vector<string> buildArray(vector<int>& target, int n) 
     {
-       int ref=0;
-       int i=1;;
+       vector<int>ref;
+       int i=1;
        vector<string>ans;
-       while(i!=n+1 && ref!=target.size())
+       while(i!=n+1 && ref!=target)
        {
-        if(target[ref]==i)
+        if(find(target.begin(),target.end(),i)!=target.end())
         {
+            ref.push_back(i);
             ans.push_back("Push");
-            ref++;
         }
         else
         {
